@@ -35,3 +35,11 @@ img {
     margin: 0 auto;
     padding: 0 1rem;
 }
+
+.search-container {
+    background-color: var(--md-dark-color);
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
