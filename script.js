@@ -28,6 +28,22 @@ function displayMovieList(movies) {
     searchList.innerHTML = "";
     for (let idx = 0; idx < movies.length; idx++) {
         let movieListItem = document.createElement('div');
-        console.log(movieListItem);
+        movieListItem.dataset.id = movies[idx].imdbID;
+        movieListItem.classList.add('search-list-item');
+        if (movies[idx].Poster != "N/A")
+            moviePoster = movies[idx].Poster;
+        else
+            moviePoster = "image_not_found.png";
+
+        movieListItem.innerHTML = `
+            <div class="search-item-thumbnail">
+                            <img src="${moviePoster}" alt="">
+                        </div>
+                        <div class="search-item-info">
+                            <h3>${movies[idx].Title}</h3>
+                            <p>${movies[idx].Year}</p>
+                        </div>
+            `;
+        searchList.appendChild(movieListItem);
     }
 }
